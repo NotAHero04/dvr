@@ -27,8 +27,8 @@ jobs:
         run: sudo apt install ffmpeg
 
       - name: Run DVR
-        run: |
-          ffmpeg -i "${{ github.event.inputs.distributions }}" -c copy ~/vid.mkv
+        run: ffmpeg -i "${{ github.event.inputs.distributions }}" -c copy ~/vid.mkv
+        continue-on-error: true
       
       - name: Upload
         uses: actions/upload-artifact@v3.1.2
